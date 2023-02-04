@@ -5,13 +5,13 @@ import { Feedback } from './Feedback';
 import { Statistics } from './Statistics';
 import { Notification } from './Notification';
 
+import {Container} from './App.styled'
 export class App extends Component {
   state = {
     good: 0,
     neutral: 0,
     bad: 0,
   };
-  //  console.log();
   addFeedback = key => {
     this.setState(prevState => {
       return { [key]: prevState[key] + 1 };
@@ -31,7 +31,7 @@ export class App extends Component {
     const { good, neutral, bad } = this.state;
 
     return (
-      <div>
+      <Container>
         <Section title="Please leave feedback">
           <Feedback
             options={Object.keys(this.state)}
@@ -49,7 +49,7 @@ export class App extends Component {
             />)
         : (<Notification message="There is no feedback" />)}
         </Section>
-      </div>
+      </Container>
     );
   }
 }

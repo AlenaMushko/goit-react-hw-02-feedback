@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import {List} from './Feedback.styled'
 
 export const Feedback = ({ options, onLeaveFeedback}) => {
   return (
-    <ul>
+    <List>
       {options.map(option => {
         return (
           <li key={option}>
@@ -16,7 +17,7 @@ export const Feedback = ({ options, onLeaveFeedback}) => {
           </li>
         );
       })}
-    </ul>
+    </List>
   );
 };
 
